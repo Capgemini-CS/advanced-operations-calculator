@@ -7,6 +7,7 @@ import com.calculator.input.InputValues;
 import com.calculator.operations.*;
 import com.calculator.screen.Screen;
 import com.calculator.screen.ShowOutputOnConsole;
+import com.calculator.screen.ShowOutputOnFile;
 
 public class Calculator {
 
@@ -19,11 +20,15 @@ public class Calculator {
         String operator = input.getInputValueOperatorFromKeyboard();
 
         InputValueBean inputEquation = new InputValueBean(firstNumber, secondNumber, operator);
+
         float equationResult = Calculator.executeOperation(inputEquation.getFirstNumber(),
                 inputEquation.getSecondNumber(), inputEquation.getOperator());
 
         ShowOutputOnConsole showOutputOnConsole = new ShowOutputOnConsole();
         showOutputOnConsole.showOutput(equationResult);
+
+        ShowOutputOnFile showOutputOnFile = new ShowOutputOnFile();
+        showOutputOnFile.showOutput(equationResult);
 
 
 
