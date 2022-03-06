@@ -1,6 +1,6 @@
-package com.calculator.screen;
+package com.calculator.output;
 
-public class ShowOutputOnConsole implements Screen{
+public class ShowOutputOnConsole implements Screen {
 
     @Override
     public void showOutput(float result) {

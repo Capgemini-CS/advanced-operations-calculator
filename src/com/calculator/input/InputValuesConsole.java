@@ -5,10 +5,10 @@ import com.calculator.input.validation.InputValidation;
 
 import java.util.Scanner;
 
-public class InputValues implements InputValuesInterface {
+public class InputValuesConsole implements InputValuesConsoleInterface {
     static Scanner scanner = new Scanner(System.in);
 
-    public InputValues() {
+    public InputValuesConsole() {
 
     }
 
