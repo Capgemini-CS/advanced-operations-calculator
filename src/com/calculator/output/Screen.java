@@ -1,4 +1,4 @@
-package com.calculator.screen;
+package com.calculator.output;
 
 public interface Screen {
 
