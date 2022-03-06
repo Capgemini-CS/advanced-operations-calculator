@@ -1,12 +1,12 @@
 package com.calculator.input;
 
-public class InputValueBean {
+public class InputValuesConsoleBean {
 
     int firstNumber;
     int secondNumber;
     String operator;
 
-    public InputValueBean(int firstNumber, int secondNumber, String operator) {
+    public InputValuesConsoleBean(int firstNumber, int secondNumber, String operator) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
         this.operator = operator;

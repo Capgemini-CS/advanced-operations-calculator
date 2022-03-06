@@ -2,7 +2,7 @@ package com.calculator.input;
 
 import com.calculator.exception.IncorrectInputOperatorException;
 
-public interface InputValuesInterface {
+public interface InputValuesConsoleInterface {
 
     int getInputValueNumberFromKeyboard();
 

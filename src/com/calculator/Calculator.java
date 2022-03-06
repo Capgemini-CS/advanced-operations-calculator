@@ -2,36 +2,18 @@ package com.calculator;
 
 import com.calculator.exception.DivisionByZeroException;
 import com.calculator.exception.IncorrectInputOperatorException;
-import com.calculator.input.InputValueBean;
-import com.calculator.input.InputValues;
+import com.calculator.exception.NotEnoughOperatorsException;
+import com.calculator.menu.CalculatorMenu;
 import com.calculator.operations.*;
-import com.calculator.screen.Screen;
-import com.calculator.screen.ShowOutputOnConsole;
-import com.calculator.screen.ShowOutputOnFile;
+
+import java.io.IOException;
 
 public class Calculator {
+    public static final String INPUT_FILE_PATH = "InputEquationValue.txt";
 
-    public static void main(String[] args) throws IncorrectInputOperatorException, DivisionByZeroException {
-        System.out.println("Insert input data(number, number, math operator):");
-        InputValues input = new InputValues();
+    public static void main(String[] args) throws IncorrectInputOperatorException, DivisionByZeroException, IOException, NotEnoughOperatorsException {
 
-        int firstNumber = input.getInputValueNumberFromKeyboard();
-        int secondNumber = input.getInputValueNumberFromKeyboard();
-        String operator = input.getInputValueOperatorFromKeyboard();
-
-        InputValueBean inputEquation = new InputValueBean(firstNumber, secondNumber, operator);
-
-        float equationResult = Calculator.executeOperation(inputEquation.getFirstNumber(),
-                inputEquation.getSecondNumber(), inputEquation.getOperator());
-
-        ShowOutputOnConsole showOutputOnConsole = new ShowOutputOnConsole();
-        showOutputOnConsole.showOutput(equationResult);
-
-        ShowOutputOnFile showOutputOnFile = new ShowOutputOnFile();
-        showOutputOnFile.showOutput(equationResult);
-
-
-
+        CalculatorMenu.chooseOutputMethod(CalculatorMenu.equationResultForChosenInputMethod());
     }
 
     public static float executeOperation(int firstNumber, int secondNumber, String operator) throws DivisionByZeroException {
@@ -58,4 +40,5 @@ public class Calculator {
         }
         return result;
     }
+
 }
