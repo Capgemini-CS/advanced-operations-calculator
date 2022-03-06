@@ -51,12 +51,9 @@ public class CalculatorMenu {
 
     public static void chooseOutputMethod(float equationResult) {
         System.out.println("Choose output method: ");
-
         Scanner inputMethod = new Scanner(System.in);
-        String methodType = inputMethod.nextLine();
-        System.out.println(methodType);
 
-        switch (methodType) {
+        switch (inputMethod.nextLine()) {
             case "CONSOLE":
                 ShowOutputOnConsole showOutputOnConsole = new ShowOutputOnConsole();
                 showOutputOnConsole.showOutput(equationResult);
